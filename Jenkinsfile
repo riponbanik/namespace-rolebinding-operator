@@ -6,7 +6,7 @@ pipeline {
    
     agent {
         //label "docker"
-        label master
+        label "master"
     }    
    
    stages { 
