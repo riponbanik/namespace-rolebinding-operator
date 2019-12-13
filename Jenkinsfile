@@ -20,13 +20,15 @@ pipeline {
          # export GO111MODULE=off
          go mod tidy
          make build
+         make build-image
          '''
        } 
      }
      stage ("Deploy") {
        steps {     
          sh '''
-         ./bin/namespace-rolebinding-operator --run-outside-cluster 1
+         #./bin/namespace-rolebinding-operator --run-outside-cluster 1
+         sed -e "s/BUILD_NUMBER/${BUILD_NUMBER}/g" operator.yaml | kubectl apply -f -
          '''
        }
      }
