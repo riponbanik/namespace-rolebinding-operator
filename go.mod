@@ -21,4 +21,4 @@ require (
 	k8s.io/utils v0.0.0-20191114200735-6ca3b61696b6 // indirect
 )
 
-replace github.com/riponbanik/namespace-rolebinding-operator/pkg/controller => ./pkg/controller
+
