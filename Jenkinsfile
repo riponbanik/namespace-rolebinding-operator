@@ -20,7 +20,7 @@ pipeline {
          # export GO111MODULE=off
          go mod tidy
          make build         
-         VERSION=${BUILD_NUMBER} make build-image
+         VERSION="latest" make build-image
          '''
        } 
      }
@@ -28,7 +28,7 @@ pipeline {
        steps {     
          sh '''
          #./bin/namespace-rolebinding-operator --run-outside-cluster 1
-         sed -e "s/BUILD_NUMBER/${BUILD_NUMBER}/g" operator.yaml | kubectl apply -f -
+         sed -e "s/BUILD_NUMBER/latest/g" operator.yaml | kubectl apply -f -
          '''
        }
      }
