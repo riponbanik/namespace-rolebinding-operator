@@ -17,7 +17,7 @@ pipeline {
          export GOPATH=$WORKSPACE
          export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
          export GO111MODULE=off
-         go install .
+         go mod tidy
          make build
          '''
        } 
