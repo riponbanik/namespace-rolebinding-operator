@@ -1,4 +1,4 @@
-FROM golang:1.9
+FROM golang:1.13.5
 
 WORKDIR /go/src/github.com/riponbanik/namespace-rolebinding-operator
 
@@ -6,10 +6,10 @@ RUN useradd -u 10001 kube-operator
 
 RUN go get github.com/Masterminds/glide
 
-COPY glide.yaml .
-COPY glide.lock .
+COPY go.mod .
+COPY go.sum .
 
-RUN glide install
+RUN go mod tidy
 
 COPY . .
 
