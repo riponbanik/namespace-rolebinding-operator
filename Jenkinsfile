@@ -19,9 +19,8 @@ pipeline {
          export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
          # export GO111MODULE=off
          go mod tidy
-         make build
-         VERSION=${BUILD_NUMBER}
-         make build-image
+         make build         
+         VERSION=${BUILD_NUMBER} make build-image
          '''
        } 
      }
