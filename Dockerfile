@@ -6,10 +6,10 @@ RUN useradd -u 10001 kube-operator
 
 RUN go get github.com/Masterminds/glide
 
-COPY go.mod .
-COPY go.sum .
+COPY glide.yaml .
+COPY glide.lock .
 
-RUN go mod tidy
+RUN glide install
 
 COPY . .
 
