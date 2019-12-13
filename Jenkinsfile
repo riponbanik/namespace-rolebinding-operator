@@ -13,8 +13,9 @@ pipeline {
      stage ("Build") {
        steps {     
          sh '''
+         mkdir -p /var/jenkins_home/workspace/gobuild
          export GOROOT=/usr/local/go
-         export GOPATH=$WORKSPACE
+         export GOPATH=/var/jenkins_home/workspace/gobuild
          export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
          # export GO111MODULE=off
          go mod tidy
