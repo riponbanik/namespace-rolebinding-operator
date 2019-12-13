@@ -16,6 +16,7 @@ pipeline {
          export GOROOT=/usr/local/go
          export GOPATH=$WORKSPACE
          export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+         export GO111MODULE=off
          go install .
          make build
          '''
