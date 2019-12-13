@@ -1,5 +1,5 @@
 OPERATOR_NAME  := namespace-rolebinding-operator
-# VERSION := $(shell date +%Y%m%d%H%M)
+VERSION := $(VERSION:-`shell date +%Y%m%d%H%M`)
 IMAGE := ripon/$(OPERATOR_NAME)
 
 .PHONY: install_deps build build-image
