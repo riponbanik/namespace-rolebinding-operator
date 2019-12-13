@@ -47,5 +47,5 @@ spec:
     spec:
       serviceAccountName: namespace-rolebinding-operator
       containers:
-      - image: galkon/namespace-rolebinding-operator:201708291842
+      - image: ripon/namespace-rolebinding-operator:BUILD_NUMBER
         name: namespace-rolebinding-operator
