@@ -40,6 +40,9 @@ metadata:
     k8s-app: namespace-rolebinding-operator
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: namespace-rolebinding-operator
   template:
     metadata:
       labels:
