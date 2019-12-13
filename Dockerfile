@@ -7,6 +7,7 @@ RUN useradd -u 10001 kube-operator
 RUN go get github.com/Masterminds/glide
 
 COPY glide.yaml .
+COPY glide.lock .
 
 RUN glide install
 
