@@ -20,6 +20,7 @@ pipeline {
          # export GO111MODULE=off
          go mod tidy
          make build
+         VERSION=${BUILD_NUMBER}
          make build-image
          '''
        } 
